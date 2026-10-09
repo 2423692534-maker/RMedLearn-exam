@@ -1,0 +1,38 @@
+# R session files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Generated student submissions and teacher results
+/学生端/56_56.txt
+/学生端/[0-9]*_[0-9]*.txt
+/教师端/学生答题记录.xlsx
+/教师端/RMedLearn_考试成绩.xlsx
+/submissions/
+/results/
+/学生提交/
+/教师端/学生提交/
+/教师端/批改结果/
+
+# Office temporary files
+~$*.xlsx
+~$*.xlsm
+~$*.docx
+
+# Local environment and credentials
+.Renviron
+.env
+.env.*
+!.env.example
+
+# Editor and OS temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
+*.swp
+
+# Keep package installers, exam datasets, and collection templates.
+# This package includes teacher answers and is intended for a PRIVATE repository.

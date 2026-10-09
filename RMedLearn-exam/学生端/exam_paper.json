@@ -1,0 +1,277 @@
+{
+  "schema_version": 3,
+  "exam_id": "RMedLearn_Teacher_Exam_2026_v1",
+  "title": "R语言医学数据分析考试",
+  "duration_minutes": 120,
+  "dataset_count": 10,
+  "dataset_hashes": {
+    "1": "2ef3afd50c97d7b0178f392291596f5d08e471e6a131f7076613e509c4899044",
+    "2": "8794d5ef675e0d8ed65b39239621008e8435ce79a42b3024ca03f3d71fdc3d40",
+    "3": "4ec431ddec394976aa3a9cbafff14dd911ef17330352edfcd11c641f2f092fe0",
+    "4": "9528b8b8e5afe934347fbc8da7f30780522317418af1c0456b9f7aeb9d6619ed",
+    "5": "2fb1d51468d4830a7183c9c11bb5f34e37a7ee628514942144b9a8982eb6a53e",
+    "6": "5e4715866c2a9447874823911ed8865b2e0540b4d1ee32d75b3b464dae70c8d8",
+    "7": "fe229236cbb92674b30b17fb3c3353c94e240307593d4ee1fafb7b650bcdda2c",
+    "8": "11be5dd2e25fc251609dbabe1ab81690aec4bfb99b9a70648ffbec8e95a136db",
+    "9": "2828f022ca515b8f14759b7c4c115e974802a0f4ba2b6e0443beedd22df59362",
+    "10": "71434418e5781a62cde74c75ed4c8ffaf7d9d2fb907322640ae65f1e198313db"
+  },
+  "format_rules": [
+    "除特殊说明外，连续数值均保留 2 位小数。",
+    "P 值保留 3 位小数；当原始 P 值 < 0.001 时，统一填写 0.000。",
+    "比例题填写 0–1 之间的原始比例，不填写百分号，并保留 2 位小数。",
+    "样本量、行数、列数等计数结果填写整数。",
+    "变量名称区分大小写；本试卷变量名均按题目所示小写形式书写。",
+    "涉及分组时必须注意界值归属。",
+    "如果某题不会做，可以留空，但空白答案按错误处理。"
+  ],
+  "format_full": "结果填写规范：\n1. 除特殊说明外，连续数值均保留 2 位小数。\n2. P 值保留 3 位小数；当原始 P 值 < 0.001 时，统一填写 0.000。\n3. 比例题填写 0–1 之间的原始比例，不填写百分号，并保留 2 位小数。\n4. 样本量、行数、列数等计数结果填写整数。\n5. 变量名称区分大小写；本试卷变量名均按题目所示小写形式书写。\n6. 涉及分组时必须注意界值归属。\n7. 如果某题不会做，可以留空，但空白答案按错误处理。",
+  "format_short": "连续数值保留2位；P值保留3位（P<0.001填0.000）；比例填0–1；计数填整数；变量名按题目小写；分组注意界值归属。",
+  "questions": [
+    {
+      "id": "Q01",
+      "title": "第1题 工作空间设置与 R 包加载",
+      "code_score": 10,
+      "fill_score": 0,
+      "total_score": 10,
+      "code_labels": [
+        "q01_workdir",
+        "q01_import"
+      ],
+      "steps": [
+        {
+          "title": "设置工作空间",
+          "text": "在本地 R/RStudio 和考试系统中，分别使用 <code>setwd()</code> 将工作空间设置为本次考试文件夹，并使用 <code>getwd()</code> 检查工作空间是否正确。<br><br><span style=\"color:#c00000;font-weight:700;\">注意：1）代码框代码不能一行一行运行，请先在 RStudio 中运行成功后，复制到下方代码框，再点击“运行代码”，下同。<br>2）注意通过 <code>getwd()</code> 检查代码运行是否成功。</span>"
+        },
+        {
+          "title": "R 包加载",
+          "text": "加载本次考试可能使用的 <code>foreign</code> 包和 <code>dplyr</code> 包；如果没有安装，请先安装再加载。"
+        }
+      ],
+      "fills": [],
+      "text": "步骤 1｜设置工作空间：在本地 R/RStudio 和考试系统中，分别使用 setwd() 将工作空间设置为本次考试文件夹，并使用 getwd() 检查工作空间是否正确。注意：1）代码框代码不能一行一行运行，请先在 RStudio 中运行成功后，复制到下方代码框，再点击“运行代码”，下同。2）注意通过 getwd() 检查代码运行是否成功。\n步骤 2｜R 包加载：加载本次考试可能使用的 foreign 包和 dplyr 包；如果没有安装，请先安装再加载。"
+    },
+    {
+      "id": "Q02",
+      "title": "第2题 导入数据",
+      "code_score": 10,
+      "fill_score": 0,
+      "total_score": 10,
+      "code_labels": "q02_code",
+      "steps": [
+        {
+          "title": "准备并导入随机数据集",
+          "text": "根据第一页显示的数据编号 X1–X10，直接使用当前考试文件夹中对应的 <code>xN.csv</code>。例如本次数据编号为 X7，则使用 <code>x7.csv</code>；使用 <code>read.csv()</code> 导入并命名为 <code>data1</code>。<br><br><span style=\"color:#c00000;font-weight:700;\">再次提醒：本次考试所有代码，请先在 RStudio 中运行成功后，再复制到下方代码框运行，点击“运行代码”，不要一行一行运行！</span>"
+        },
+        {
+          "title": "检查导入结果",
+          "text": "使用 <code>head()</code>、<code>dim()</code> 和 <code>str()</code> 检查 <code>data1</code>。考试系统会同时校验当前考试文件夹中的 xN.csv 是否为本学号本次激活所分配的数据集。"
+        }
+      ],
+      "fills": [],
+      "text": "步骤 1｜准备并导入随机数据集：根据第一页显示的数据编号 X1–X10，直接使用当前考试文件夹中对应的 xN.csv。例如本次数据编号为 X7，则使用 x7.csv；使用 read.csv() 导入并命名为 data1。再次提醒：本次考试所有代码，请先在 RStudio 中运行成功后，再复制到下方代码框运行，点击“运行代码”，不要一行一行运行！\n步骤 2｜检查导入结果：使用 head()、dim() 和 str() 检查 data1。考试系统会同时校验当前考试文件夹中的 xN.csv 是否为本学号本次激活所分配的数据集。"
+    },
+    {
+      "id": "Q03",
+      "title": "第3题 筛选子集并建立 data2",
+      "code_score": 5,
+      "fill_score": 5,
+      "total_score": 10,
+      "code_labels": "q03_code",
+      "steps": [
+        {
+          "title": "筛选年龄范围",
+          "text": "在 <code>data1</code> 中保留 <code>age >= 40</code> 且 <code>age <= 75</code> 的对象，并将结果保存为 <code>data2</code>。"
+        },
+        {
+          "title": "检查结果",
+          "text": "使用 <code>dim()</code>、<code>str()</code> 等函数检查 <code>data2</code>，并填写 data2 的行数和列数。"
+        }
+      ],
+      "fills": [
+        {
+          "id": "q03_fill1",
+          "label": "data2 的行数",
+          "kind": "integer",
+          "tolerance": 0
+        },
+        {
+          "id": "q03_fill2",
+          "label": "data2 的列数",
+          "kind": "integer",
+          "tolerance": 0
+        }
+      ],
+      "text": "步骤 1｜筛选年龄范围：在 data1 中保留 age >= 40 且 age  的对象，并将结果保存为 data2。\n步骤 2｜检查结果：使用 dim()、str() 等函数检查 data2，并填写 data2 的行数和列数。"
+    },
+    {
+      "id": "Q04",
+      "title": "第4题 计算 bmi 并建立 bmi1 四分类",
+      "code_score": 10,
+      "fill_score": 0,
+      "total_score": 10,
+      "code_labels": "q04_code",
+      "steps": [
+        {
+          "title": "计算 bmi",
+          "text": "在 <code>data2</code> 中创建 <code>bmi</code>，计算公式为 <code>weight_kg / (height_cm / 100)^2</code>。"
+        },
+        {
+          "title": "建立 bmi 四分类",
+          "text": "在 <code>data2</code> 中根据 bmi 创建 <code>bmi1</code>，取值必须为 1、2、3、4：1 为 <code>bmi < 18</code>；2 为 <code>bmi >= 18 & bmi < 24</code>；3 为 <code>bmi >= 24 & bmi < 28</code>；4 为 <code>bmi >= 28</code>。<br><strong>注意：分组时一定注意界值归属，例如 bmi = 24 应归到第 3 组，而不是第 2 组；bmi = 28 应归到第 4 组。</strong>"
+        },
+        {
+          "title": "检查结果",
+          "text": "使用 <code>str()</code> 等函数检查数据集，并使用 <code>table()</code> 检查 bmi1 的各组数；本题不需要填写各组人数。"
+        }
+      ],
+      "fills": [],
+      "text": "步骤 1｜计算 bmi：在 data2 中创建 bmi，计算公式为 weight_kg / (height_cm / 100)^2。\n步骤 2｜建立 bmi 四分类：在 data2 中根据 bmi 创建 bmi1，取值必须为 1、2、3、4：1 为 bmi ；2 为 bmi >= 18 & bmi ；3 为 bmi >= 24 & bmi ；4 为 bmi >= 28。注意：分组时一定注意界值归属，例如 bmi = 24 应归到第 3 组，而不是第 2 组；bmi = 28 应归到第 4 组。\n步骤 3｜检查结果：使用 str() 等函数检查数据集，并使用 table() 检查 bmi1 的各组数；本题不需要填写各组人数。"
+    },
+    {
+      "id": "Q05",
+      "title": "第5题 建立 tg_cat 并计算升高组比例",
+      "code_score": 5,
+      "fill_score": 5,
+      "total_score": 10,
+      "code_labels": "q05_code",
+      "steps": [
+        {
+          "title": "建立 tg 分类变量",
+          "text": "在 <code>data2</code> 中创建 <code>tg_cat</code>：<code>tg >= 2.3</code> 赋值为 1；<code>tg < 2.3</code> 赋值为 0。<br><strong>注意：分组时一定注意界值归属，tg = 2.3 应归入 tg_cat = 1。</strong>"
+        },
+        {
+          "title": "计算比例",
+          "text": "计算 <code>tg_cat = 1</code> 的对象占 data2 中 tg_cat 非缺失对象的原始比例，结果填写 0–1 之间的小数，不填写百分号。"
+        }
+      ],
+      "fills": [
+        {
+          "id": "q05_fill1",
+          "label": "tg_cat = 1 的原始比例（0–1）",
+          "kind": "numeric",
+          "tolerance": 0.05
+        }
+      ],
+      "text": "步骤 1｜建立 tg 分类变量：在 data2 中创建 tg_cat：tg >= 2.3 赋值为 1；tg  赋值为 0。注意：分组时一定注意界值归属，tg = 2.3 应归入 tg_cat = 1。\n步骤 2｜计算比例：计算 tg_cat = 1 的对象占 data2 中 tg_cat 非缺失对象的原始比例，结果填写 0–1 之间的小数，不填写百分号。"
+    },
+    {
+      "id": "Q06",
+      "title": "第6题 分类变量因子化",
+      "code_score": 10,
+      "fill_score": 0,
+      "total_score": 10,
+      "code_labels": "q06_code",
+      "steps": [
+        {
+          "title": "因子化",
+          "text": "将 <code>sex</code>、<code>huji</code>、<code>bmi1</code>、<code>smoking</code>、<code>insomnia</code>、<code>tg_cat</code> 转换为因子变量。"
+        },
+        {
+          "title": "复核结果",
+          "text": "使用 <code>str()</code> 等函数检查上述变量是否已经正确转换为因子变量。"
+        }
+      ],
+      "fills": [],
+      "text": "步骤 1｜因子化：将 sex、huji、bmi1、smoking、insomnia、tg_cat 转换为因子变量。\n步骤 2｜复核结果：使用 str() 等函数检查上述变量是否已经正确转换为因子变量。"
+    },
+    {
+      "id": "Q07",
+      "title": "第7题 分类变量参照组再设置",
+      "code_score": 10,
+      "fill_score": 0,
+      "total_score": 10,
+      "code_labels": "q07_code",
+      "steps": [
+        {
+          "title": "参照组再设置",
+          "text": "在 <code>data2</code> 中将 <code>bmi1</code> 的第 2 组设置为参考组，并将 <code>sex</code> 以 Female（第 2 组）设置为参考组。其他因子变量自动以第一组作为对照，无需另行设置。"
+        },
+        {
+          "title": "检查因子水平顺序",
+          "text": "使用 <code>str()</code>、<code>table()</code>、<code>levels()</code> 等函数检查 sex、bmi1 的因子水平顺序。"
+        }
+      ],
+      "fills": [],
+      "text": "步骤 1｜参照组再设置：在 data2 中将 bmi1 的第 2 组设置为参考组，并将 sex 以 Female（第 2 组）设置为参考组。其他因子变量自动以第一组作为对照，无需另行设置。\n步骤 2｜检查因子水平顺序：使用 str()、table()、levels() 等函数检查 sex、bmi1 的因子水平顺序。"
+    },
+    {
+      "id": "Q08",
+      "title": "第8题 不同分类变量的 health 差异比较",
+      "code_score": 5,
+      "fill_score": 10,
+      "total_score": 15,
+      "code_labels": "q08_code",
+      "steps": [
+        {
+          "title": "比较不同 sex 的 health",
+          "text": "在 <code>data2</code> 中比较不同 sex 组的 health 均数差异。"
+        },
+        {
+          "title": "比较不同 bmi1 的 health",
+          "text": "在 <code>data2</code> 中比较 4 个 bmi1 组的 health 均数差异。"
+        },
+        {
+          "title": "比较不同 insomnia 的 health",
+          "text": "在 <code>data2</code> 中比较不同 insomnia 组的 health 均数差异。"
+        },
+        {
+          "title": "提取结果",
+          "text": "提取不同 sex 组比较和 bmi1 组比较的 P 值。假设各组数据满足正态性、方差齐性和独立性，均采用双侧检验。"
+        }
+      ],
+      "fills": [
+        {
+          "id": "q08_fill1",
+          "label": "不同 sex 的 P 值",
+          "kind": "numeric",
+          "tolerance": 0.05
+        },
+        {
+          "id": "q08_fill2",
+          "label": "不同 bmi1 的 P 值",
+          "kind": "numeric",
+          "tolerance": 0.05
+        }
+      ],
+      "text": "步骤 1｜比较不同 sex 的 health：在 data2 中比较不同 sex 组的 health 均数差异。\n步骤 2｜比较不同 bmi1 的 health：在 data2 中比较 4 个 bmi1 组的 health 均数差异。\n步骤 3｜比较不同 insomnia 的 health：在 data2 中比较不同 insomnia 组的 health 均数差异。\n步骤 4｜提取结果：提取不同 sex 组比较和 bmi1 组比较的 P 值。假设各组数据满足正态性、方差齐性和独立性，均采用双侧检验。"
+    },
+    {
+      "id": "Q09",
+      "title": "第9题 logistic 回归分析",
+      "code_score": 5,
+      "fill_score": 10,
+      "total_score": 15,
+      "code_labels": "q09_code",
+      "steps": [
+        {
+          "title": "建立 logistic 回归模型",
+          "text": "以 <code>tg_cat</code> 为因变量，在 <code>data2</code> 中建立 logistic 回归模型：<code>tg_cat ~ insomnia + sex + huji + bmi1 + smoking + sugar</code>，不采用逐步回归方法。"
+        },
+        {
+          "title": "输出统计结果",
+          "text": "使用 <code>summary()</code> 输出回归分析结果，并编写代码输出 OR 值。"
+        },
+        {
+          "title": "提取结果",
+          "text": "提取 sex = 男性相对于女性的 OR 值，以及 sugar 的假设检验 P 值。"
+        }
+      ],
+      "fills": [
+        {
+          "id": "q09_fill1",
+          "label": "sex：男性相对于女性的 OR 值",
+          "kind": "numeric",
+          "tolerance": 0.05
+        },
+        {
+          "id": "q09_fill2",
+          "label": "sugar 的 P 值",
+          "kind": "numeric",
+          "tolerance": 0.05
+        }
+      ],
+      "text": "步骤 1｜建立 logistic 回归模型：以 tg_cat 为因变量，在 data2 中建立 logistic 回归模型：tg_cat ~ insomnia + sex + huji + bmi1 + smoking + sugar，不采用逐步回归方法。\n步骤 2｜输出统计结果：使用 summary() 输出回归分析结果，并编写代码输出 OR 值。\n步骤 3｜提取结果：提取 sex = 男性相对于女性的 OR 值，以及 sugar 的假设检验 P 值。"
+    }
+  ]
+}
